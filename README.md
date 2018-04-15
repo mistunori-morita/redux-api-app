@@ -1,0 +1,86 @@
+# Redux-api app
+- `create-react-app xxx` で雛形インストール
+- `npm install axios redux react-router react-router-dom react-redux redux-thunk react-router-redux`でインストール
+```js
+//package.jsonにインストールされていればOKxx
+{
+  "name": "redux-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.4",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
+```
+- index.jsに、importしていく
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+//ここから下
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import { createHistory } from 'history/createBrowserHistory';
+import { routerMiddleware } from "react-router-redux";
+import thunk from 'redux-thunk';
+
+ReactDOM.render(<App />, document.getElementById('root'));
+registerServiceWorker();
+```
+
+- scr/viewsフォルダを作成 全てのviewはここに
+- src/reducers/index.jsを作成
+```js
+//reducers/index.js
+import { combineReducers } from 'redux';
+
+export default combineReducers({  });
+```
+
+```js
+//index.js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import registerServiceWorker from './registerServiceWorker';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import createHistory from 'history/createBrowserHistory'
+import { routerMiddleware } from "react-router-redux";
+import thunk from 'react-thunk';
+import reducers from './reducers'
+
+const history = createHistroy()
+const middleware = [ routerMiddleware(history), thunk];
+
+const store = createStore(
+  reducers,
+  applyMiddleware(...middleware)
+)
+
+
+ReactDOM.render(
+  <Provider store={ store }>
+    <App />
+  </Provider>, document.getElementById('root'));
+registerServiceWorker();
+
+```
+- npm startでビルドできたら雛形OK

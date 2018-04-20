@@ -84,3 +84,44 @@ registerServiceWorker();
 
 ```
 - npm startでビルドできたら雛形OK
+
+## Routerの設定
+- App.jsを修正
+```js
+import React, { Component } from 'react';
+import { Route, Router } from 'react-router';
+import PropTypes from 'prop-types';
+import './App.css';
+import Home from './views/Home';
+
+class App extends Component {
+  render() {
+    return (
+      //Routerの設定
+      <Router history={ this.props.history}>
+        <div className="App">
+          <Route exact path="/" component={Home}/>
+        </div>
+      </Router>
+    );
+  }
+}
+
+App.propTypes = {
+  history: PropTypes.any.isRequired
+}
+
+export default App;
+
+```
+
+- index.jsを修正
+```js
+  <Provider store={store}>
+  //historyを追加
+    <App history={ history }/>
+  </Provider>
+```
+- views/homeを作成
+- コンポーネントとして渡す
+- うまくいくとHomeコンポーネントの中身が表示される

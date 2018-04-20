@@ -125,3 +125,64 @@ export default App;
 - views/homeを作成
 - コンポーネントとして渡す
 - うまくいくとHomeコンポーネントの中身が表示される
+
+## Reducer周り
+- actions/http.js
+```js
+import axios from 'axios';
+
+const http = axios.create({
+  baseURL: 'https://eactjsteachingproj.herokuapp.com/'
+})
+
+export default http;
+```
+- actions/index.js
+```js
+import http from './htpp';
+
+//getUserss
+export const getUsers = () => {
+  return (dipatch, getState) =>{
+    console.log("action getUsers")
+  }
+}
+```
+
+### reducerとviewのつなぎこみ
+```js
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import { getUsers } from '../actions'
+
+class Home extends Component {
+  constructor(){
+    super();
+  }
+  componentDidMount(){
+    this.props.getUsers();
+  }
+  render(){
+    return(
+      <div>
+        <h2>Home</h2>
+      </div>
+    );
+  }
+}
+
+function mapStateToProps(state){
+  return {
+    users: state.getUsers
+  }
+}
+
+function mapDispatchToProps(dispatch){
+  return bindActionCreators({
+    getUsers
+  }, dispatch)
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
+```

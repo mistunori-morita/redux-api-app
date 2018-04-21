@@ -5,10 +5,17 @@ class UserItem extends Component {
   render(){
     const { name, last_name, id, facebook } = this.props;
     return(
-      <div>
-        <h2>{name}</h2> 
-        <h2>{last_name}</h2> 
-        <h2>{facebook}</h2> 
+      <div className="card">
+        <div className="card-content">
+          <div className="UserItem-leftbox">
+            <img src="" alt="" />
+          </div>
+          <div className="UserItem-rightBox">
+            <h2 className="UserItem-name">{name}</h2> 
+            <h2 className="UserItem-last_name">{last_name}</h2> 
+            <h2 className="UserItem-facebook">{facebook}</h2> 
+          </div>
+        </div>
       </div>
     );
   }

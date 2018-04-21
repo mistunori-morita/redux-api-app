@@ -189,3 +189,11 @@ export default connect(mapStateToProps, mapDispatchToProps)(Home);
 
 ## cssによるスタイリング
 - `npm install materialize-css`を使用
+```js
+//今回はこういう形で使用
+import 'materialize-css/dist/css/materialize.min.css'
+import './index.css'
+```
+- あとはスタイリングしていけば整う
+- `https://fonts.google.com/?selection.family=Gugi`で好きなフォントを設定してクリック
+- @IMPORTの部分を押して、css側にインポートしたのちに、font-familiyをbodyなり好きな箇所に貼ればOK

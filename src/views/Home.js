@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux'
 import { getUsers } from '../actions'
 import UserItem from '../components/UserItem'
 import 'materialize-css/dist/css/materialize.min.css'
-
+import './index.css'
 class Home extends Component {
   constructor(){
     super();

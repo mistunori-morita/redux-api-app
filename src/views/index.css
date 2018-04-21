@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+
+body{
+  background: #ccc;
+  font-family: 'Gugi', cursive;
+}
+
+.card-content{
+  display: flex !important;
+}
+
+.card{
+  width: 40%;
+  cursor: pointer;
+}
+
+.UserItem-leftBox{
+  width: 20%;
+}
+
+
+.UserItem-righttBox{
+  width: 80%;
+}
+
+.Home{
+  width: 100%; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

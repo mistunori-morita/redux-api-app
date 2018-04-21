@@ -8,11 +8,12 @@ class UserItem extends Component {
       <div className="card">
         <div className="card-content">
           <div className="UserItem-leftbox">
-            <img src="" alt="" />
+            <img 
+            className="UserItem-image"
+            src="https://t3.ftcdn.net/jpg/01/04/10/10/240_F_104101070_wbEDt3CmlzqnPbdmOlVCL7Q7yu9mCduz.jpg" alt="" />
           </div>
           <div className="UserItem-rightBox">
-            <h2 className="UserItem-name">{name}</h2> 
-            <h2 className="UserItem-last_name">{last_name}</h2> 
+            <h2 className="UserItem-name">{name + " " + last_name}</h2> 
             <h2 className="UserItem-facebook">{facebook}</h2> 
           </div>
         </div>

@@ -7,6 +7,7 @@ body{
 
 .card-content{
   display: flex !important;
+
 }
 
 .card{
@@ -21,8 +22,24 @@ body{
 
 .UserItem-righttBox{
   width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.UserItem-image{
+  width: 120px;
 }
 
+.UserItem-name {
+  font-size: 1.2em;
+  margin: 0;
+}
+
+.UserItem-facebook{
+  font-size: 1em;
+  margin: 0;
+}
 .Home{
   width: 100%; 
   display: flex;

@@ -1,8 +1,7 @@
-import axios from 'axios';
+import axios from 'axios'
 
 const http = axios.create({
-  baseURL: 'https://eactjsteachingproj.herokuapp.com/'
+  baseURL: 'https://reactjsteachingproj.herokuapp.com/'
 })
-
 
 export default http;

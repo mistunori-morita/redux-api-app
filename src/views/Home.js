@@ -5,6 +5,7 @@ import { getUsers } from '../actions'
 import UserItem from '../components/UserItem'
 import 'materialize-css/dist/css/materialize.min.css'
 import './index.css'
+import { RingLoader } from 'react-spinners'
 class Home extends Component {
   constructor(){
     super();
@@ -28,6 +29,16 @@ class Home extends Component {
           />
         );
       })
+    }
+    if(this.props.users.type === 'START_GET_USERS'){
+      return(
+        <div className="Home-Loader">
+          <RingLoader
+            color="#fff"
+            loading={true}
+          />
+        </div>
+      )
     }
     return(
       <div className="Home">

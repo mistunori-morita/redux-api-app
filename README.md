@@ -197,3 +197,38 @@ import './index.css'
 - あとはスタイリングしていけば整う
 - `https://fonts.google.com/?selection.family=Gugi`で好きなフォントを設定してクリック
 - @IMPORTの部分を押して、css側にインポートしたのちに、font-familiyをbodyなり好きな箇所に貼ればOK
+
+## loadingのインポート
+- `npm install react-spinners`をインストール
+- `http://www.davidhu.io/react-spinners/`
+- 好きなローディングのやつを選んでそれをimport
+```js
+//例
+//RingLoaderこれがサイトにあったものをそのまま書いただけ
+import { RingLoader } from 'react-spinners'
+
+
+//それをjsx側の方で記述
+<RingLoader 
+  color="#fff"
+  loading={true}
+/>
+
+//本来はこうやって分けて表示　これで出し分けてる
+if(this.props.users.type === 'START_GET_USERS'){
+  return(
+    <div className="Home-Loader">
+      <RingLoader
+        color="#fff"
+        loading={true}
+      />
+    </div>
+  )
+}
+return(
+  <div className="Home">
+    { users }
+  </div>
+);
+
+```

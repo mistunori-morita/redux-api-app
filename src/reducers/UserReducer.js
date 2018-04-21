@@ -1,5 +1,5 @@
 export const getUsers = ( state = [], action) => {
-  switch (action.type) {
+  switch (action.typega) {
     case 'START_GET_USERS':
       return action;
    case 'COMPLETE_GET_USERS':

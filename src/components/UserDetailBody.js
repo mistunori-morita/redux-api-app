@@ -14,11 +14,16 @@ class UserDetailBody extends Component {
   render(){
     console.log(this.state.messages)
     let messages = this.state.messages.map((currentValue) => {
-      return( <UserPost />);
+      return( <UserPost 
+        key={ currentValue.id}
+        id={currentValue.id}
+        title={currentValue.title}
+        message={currentValue.message}
+        />);
     })
     return(
       <div className="UserDetailBody">
-
+        {messages}
       </div>
     );
   }

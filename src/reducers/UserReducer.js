@@ -11,7 +11,6 @@ export const getUsers = (state = [], action) => {
   }
 }
 
-
 export const getUserById = (state = [], action) => {
   switch (action.type) {
     case 'START_GET_USER_BY_ID':

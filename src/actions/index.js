@@ -18,7 +18,6 @@ export const getUsers = () => {
       .then((response) =>{
         if(response.data)
         dispatch(completeGetUsers(response.data));
-        console.log(response)
       })
       .catch((err) => {
         dispatch(errorGetUsers(err));
@@ -35,7 +34,6 @@ export const getUserById = (userId) => {
       .then((response) =>{
         if(response.data)
         dispatch(completeGetUserById(response.data));
-        console.log(response)
       })
       .catch((err) => {
         dispatch(errorGetUserById(err));

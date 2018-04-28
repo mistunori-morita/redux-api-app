@@ -7,10 +7,6 @@ import 'materialize-css/dist/css/materialize.min.css'
 import './index.css'
 import { RingLoader } from 'react-spinners'
 class Home extends Component {
-  constructor(){
-    super();
-  }
-
   componentDidMount(){
     this.props.getUsers();
   }

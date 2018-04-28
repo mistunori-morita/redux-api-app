@@ -1,11 +1,30 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import { Redirect } from 'react-router-dom'
 
 class UserItem extends Component {
+  constructor(){
+    super();
+    this.state ={
+      isRequired: false
+    }
+    this.onClick = this.onClick.bind(this);
+  }
+
+
+  onClick(e){
+    // alert(this.props.id);
+    this.setState({
+      isRequired: true
+    })
+  }
   render(){
     const { name, last_name, id, facebook } = this.props;
+    if(this.state.isRequired){
+      return( <Redirect to={"/detail/" + id}/>);
+    }
     return(
-      <div className="card">
+      <div className="card" onClick={ this.onClick }>
         <div className="card-content">
           <div className="UserItem-leftbox">
             <img 

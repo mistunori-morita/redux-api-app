@@ -17,3 +17,9 @@
   background: #e8e8e8;
   height: 60vh;
 }
+
+.UserPost{
+  display: flex;
+  background: #fff;
+  flex-direction: column;
+}

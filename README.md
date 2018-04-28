@@ -28,7 +28,7 @@
 ```
 - index.jsに、importしていく
 ```js
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -55,7 +55,7 @@ export default combineReducers({  });
 
 ```js
 //index.js
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
@@ -290,3 +290,7 @@ export default UserDetail;
 - `npm install -g npm-check-updates`でグローバルにインストール
 - `https://www.nxworld.net/services-resource/npm-check-updates.html`
 - `npm update`とかしてアップデート
+
+## Updateしてバグったら
+- `rm -rf node_modules && npm install`
+- 一旦削除して再度インストール

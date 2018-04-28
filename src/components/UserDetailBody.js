@@ -23,7 +23,9 @@ class UserDetailBody extends Component {
     })
     return(
       <div className="UserDetailBody">
+       <div>
         {messages}
+        </div>
       </div>
     );
   }

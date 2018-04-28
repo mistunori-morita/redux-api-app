@@ -8,8 +8,8 @@ class UserPost extends Component {
     const {title, message} = this.props;
     return (
       <div className="UserPost">
-      <h1>{ title }</h1>
-      <h2>{message}</h2>
+        <h1 className="">{ title }</h1>
+        <h2 className="">{message}</h2>
       </div>
     );
   }

@@ -232,3 +232,55 @@ return(
 );
 
 ```
+
+## Redirectの設定
+- UserItemをクリックしたら詳細ページへの遷移
+```js
+class UserItem extends Component {
+  //初期化
+  constructor(){
+    super();
+    //stateを定義
+    this.state ={
+      isRequired: false
+    }
+    this.onClick = this.onClick.bind(this);
+  }
+
+  //clickeventの設定
+  onClick(e){
+    // alert(this.props.id);
+
+    //setStateでstateを更新
+    this.setState({
+      isRequired: true
+    })
+  }
+  render(){
+    const { name, last_name, id, facebook } = this.props;
+    //条件付きレンダリング 
+    if(this.state.isRequired){
+      return( <Redirect to={"/detail/" + id}/>);
+    }
+    return(
+      <div className="card" onClick={ this.onClick }>
+```
+- UserDetailコンポーネントを作成
+```js
+import React, { Component } from 'react'
+
+
+class UserDetail extends Component{
+  render(){
+    return(
+      <div>
+        <h2>Haloa</h2>
+      </div>
+    );
+  }
+}
+
+
+export default UserDetail;
+```
+- クリックするとここに遷移されるようになる

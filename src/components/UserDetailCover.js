@@ -11,7 +11,11 @@ class UserDetailCover extends Component{
   render(){
     return(
       <div className="UserDetailCover">
-        <img src={this.state.cover} className="UserDetailCover-img"/>
+        <img 
+        src={this.state.cover} 
+        className="UserDetailCover-img"
+        alt="avater"
+        />
       </div>
     );
   }

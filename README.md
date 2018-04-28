@@ -284,3 +284,9 @@ class UserDetail extends Component{
 export default UserDetail;
 ```
 - クリックするとここに遷移されるようになる
+
+## npm update
+- 余談だがnpmの更新しろよーみたいな通知がでたら
+- `npm install -g npm-check-updates`でグローバルにインストール
+- `https://www.nxworld.net/services-resource/npm-check-updates.html`
+- `npm update`とかしてアップデート
